@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fc75306a6242049b412f0008d91a08, type: 3}
   m_Name: Entity_8
   m_EditorClassIdentifier: Assembly-CSharp::EntityStats
-  Name: 
-  speed: 0
-  id: 0
+  Name: Phoenix
+  Level: 800
+  id: 89
