@@ -2,20 +2,19 @@ using UnityEngine;
 
 public class MyQueue<T>
 {
-    #region Properties/Privates
+    #region Propeties
     private QueueNode<T> head;
     private QueueNode<T> tail;
     private int count;
     #endregion
 
-    #region Public Methods
-    //-> O(1)
+    #region Methods
     public void Enqueue(T value)
     {
         QueueNode<T> newNode = new(value);
         count++;
 
-        if(head == null && tail == null)
+        if (head == null && tail == null)
         {
             head = newNode;
             tail = newNode;
@@ -26,6 +25,8 @@ public class MyQueue<T>
         tail = newNode;
     }
 
+
+
     public T Dequeue()
     {
         if (head == null)
@@ -35,32 +36,35 @@ public class MyQueue<T>
         }
 
 
+
         T value = head.Value;
         head = head.Next;
 
         count--;
         return value;
+
+
     }
+
+
+
     public T Peek()
     {
-        if (head == null) 
-        {
-            Clear();
-            throw new System.Exception("Queue Empty");
-        }
-          
+        if (head == null)
+            throw new System.Exception("Empy");
 
         return head.Value;
     }
+    #endregion
+
+    #region clear
     public void Clear()
     {
         head = null;
         tail = null;
         count = 0;
     }
-    #endregion
 
-    #region Getters
     public int Count => count;
     #endregion
 }
